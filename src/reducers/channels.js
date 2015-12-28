@@ -1,6 +1,6 @@
-export default function videos(state = [], action){
+export default function channels(state = [], action){
   switch (action.type) {
-    case 'ADD_VIDEO':
+    case 'ADD_CHANNELS':
       return state.concat(action.payload);
     default:
       return state;
