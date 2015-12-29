@@ -6,6 +6,6 @@ import { Home, Video } from 'pages';
 export default (
   <Route path='/' component={App} >
     <IndexRoute component={Home}/>
-    <Route path='video' component={Video}/>
+    <Route path='video/:id' component={Video}/>
   </Route>
 )

@@ -1,15 +1,19 @@
 import * as DM_API from 'utils/dm-api'
 
-export const addHomeVideos = (videos, error) => ({
-  type: 'ADD_HOME_VIDEOS',
-  payload: videos,
+export const addVideos = (videos, page, error) => ({
+  type: 'ADD_VIDEOS',
+  payload: {
+    videos,
+    page
+  },
   error: error
 })
 
-export const getHomeVideos = (page) => (dispatch) => (
-  DM_API.getHomeVideos(page)
+export const getVideos = (currentPage) => (dispatch) => (
+  DM_API.getVideos(currentPage)
     .end((err, res) => {
       const videos = res.body.list;
-      dispatch(addHomeVideos(videos, err))
+      const nextPage = currentPage ? res.body.page + 1 : 2
+      dispatch(addVideos(videos, nextPage, err))
     })
 )

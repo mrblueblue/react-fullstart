@@ -1,14 +1,16 @@
 
 const initialState = {
-  home: [],
-  related: []
+  list: [],
+  selected: {}
 }
 
-export default function channels(state = initialState, action){
+export default function videos(state = initialState, action){
   switch (action.type) {
-    case 'ADD_HOME_VIDEOS':
+    case 'ADD_VIDEOS':
       return Object.assign({}, state, {
-        home: state.home.concat(action.payload)});
+        page: action.payload.page,
+        list: state.list.concat(action.payload.videos)
+      });
     default:
       return state;
   }
