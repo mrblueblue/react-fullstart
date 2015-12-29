@@ -34,8 +34,8 @@ export const getVideos = (currentPage) => (dispatch) => (
     })
 )
 
-export const getVideoInfos = (id, index) => (dispatch) => (
-  DM_API.getVideoInfos(id)
+export const getVideoInfo = (id, index) => (dispatch) => (
+  DM_API.getVideoInfo(id)
     .end((err, res) => {
       const video = res.body;
       dispatch(updateSelectedVideo(index, video, err))

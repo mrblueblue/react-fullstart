@@ -17,7 +17,7 @@ export const getVideos = (page) => (
 export const getVideoInfo = (id) => (
   request
     .get(`https://api.dailymotion.com/video/${id}`)
-    .query({fields: fields.video})
+    .query({fields: fields.video.join(',')})
 )
 
 export const getChannels = () => (

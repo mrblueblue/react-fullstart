@@ -1,8 +1,11 @@
 import lifecycle from 'recompose/lifecycle';
+import curry from 'lodash.curry';
 
-export default function onSetup(callback){
-  return lifecycle(
+const onSetup = (callback, BaseComponent) => (
+  lifecycle(
     callback,
     () => null
-  )
-}
+  )(BaseComponent)
+)
+
+export default curry(onSetup)
