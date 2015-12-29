@@ -28,6 +28,8 @@
   },
   "dependencies": {
     "history": "^1.17.0",
+    "lodash.curry": "^3.0.2",
+    "lodash.throttle": "^3.0.4",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
     "react-redux": "^4.0.5",
