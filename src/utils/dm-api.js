@@ -1,7 +1,12 @@
 import request from 'superagent'
 
 const fields = {
-  home: ['name'],
+  home: [
+    'title',
+    'duration',
+    'views_total',
+    'id'
+  ],
   video: ['name'],
   channel: ['name']
 }
@@ -9,7 +14,7 @@ const fields = {
 export const getHomeVideos = (page) => (
   request
     .get('https://api.dailymotion.com/videos')
-    .query({fields: fields.home})
+    .query({fields: fields.home.join(',')})
     .query({page: page})
     .query({limit: 20})
 )
