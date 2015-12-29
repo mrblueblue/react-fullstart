@@ -5,7 +5,7 @@ export const List = ({data, RowItem}) => (
     {
       data.map((json, index) => (
         <li key={index}>
-          <RowItem {...json}/>
+          <RowItem index={index} {...json} />
         </li>
       ))
     }

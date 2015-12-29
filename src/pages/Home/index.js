@@ -3,13 +3,11 @@ import { Link } from 'react-router';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux'
 import { getVideos } from 'actions/videos';
-import onSetup from 'utils/onSetup';
 import compose from 'recompose/compose';
-
-import { ApiCollection, VideoItem } from 'components';
 import withScroll from 'utils/withScroll'
+import { ApiCollection, VideoItem } from 'components';
 
-export const VideoCollection = ({videos, getVideos}) => (
+export const VideoCollection = ({videos, getVideos, selectVideo}) => (
   <div className='home-page'>
     <ApiCollection
       fetch={getVideos}
